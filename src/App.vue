@@ -22,7 +22,7 @@
 
     <h6 class="mt-5">Definitions</h6>
     <ol type="1">
-      <li v-for="definition in definitionsArray" :key="definition">
+      <li v-for="definition in definitionsArray.slice(0, 10)" :key="definition">
         {{ definition }}
       </li>
     </ol>
