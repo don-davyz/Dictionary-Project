@@ -29,7 +29,12 @@
     padding: 15px;
     margin: 0 auto;
   }
-  
+  .st{
+    border-radius: 0.3rem 0 0 0.3rem ;
+  }
+  .ts{
+    border-radius: 0.3rem 0 0 0.3rem ;
+  }
   .form-label-group {
     position: relative;
     margin-bottom: 1rem;
@@ -176,3 +181,5 @@
     border-color: #ef1c1c;
     color: #ef1c1c
   }
+
+  

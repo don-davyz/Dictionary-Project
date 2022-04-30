@@ -7,10 +7,12 @@
   </div>
   <form @submit.prevent="getDefinations()" class="form-signin">
     <div class="form-label-group">
-      <input type='text' v-model="word" class="form-control" placeholder="Enter word" required autofocus>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+      <input style="border-radius: 0.3rem 0 0 0.3rem ;" type='text' v-model="word" class="st form-control"
+        placeholder="Enter word" required autofocus>
+      <button style="border-radius: 0 0.3rem 0.3rem 0;" class="ts btn btn-lg btn-primary btn-block"
+        type="submit">Search</button>
     </div>
-    <p style="color:red;" v-if="errortitle" >{{ errortitle }}: <span>{{ errormessage }}</span></p>
+    <p style="color:red;" v-if="errortitle">{{ errortitle }}: <span>{{ errormessage }}</span></p>
   </form>
   <div class="text-justify mt-4">
     <div style="display:flex;">
@@ -61,7 +63,7 @@ export default {
       .finally(() => this.loading = false)
   },
   setup() {
-    let errormessage, errortitle,phonetic =ref("");
+    let errormessage, errortitle, phonetic = ref("");
     const suggestionsArray = ref([]);
     const definitionsArray = ref([]);
     const word = ref("");
@@ -87,17 +89,17 @@ export default {
         });
 
         this.phonetic = responseOne.data[0].phonetic;
-        
+
       })).catch(errors => {
         console.log(errors)
         this.errortitle = errors.response.data.title,
-        this.errormessage = errors.response.data.message
+          this.errormessage = errors.response.data.message
       })
 
 
     }
 
-    return { phonetic,errortitle,errormessage, suggestionsArray, definitionsArray, word, getDefinations }
+    return { phonetic, errortitle, errormessage, suggestionsArray, definitionsArray, word, getDefinations }
 
   },
 
